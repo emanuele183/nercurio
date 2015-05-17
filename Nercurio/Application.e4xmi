@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_yQoDoPy-EeSWU-fNJiYtDg" elementId="org.eclipse.e4.ide.application" bindingContexts="_yQoDqfy-EeSWU-fNJiYtDg">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_yQoDofy-EeSWU-fNJiYtDg" label="Nercurio" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_yQoqtfy-EeSWU-fNJiYtDg">
+      <children xsi:type="advanced:Perspective" xmi:id="_yQoqtvy-EeSWU-fNJiYtDg">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_yQoqt_y-EeSWU-fNJiYtDg">
+          <children xsi:type="basic:Part" xmi:id="_yQoqufy-EeSWU-fNJiYtDg" elementId="nercurio.parts.mainPart" contributionURI="bundleclass://Nercurio/Nercurio.parts.SamplePart" label="Sample Part"/>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_yQoDufy-EeSWU-fNJiYtDg" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_yQoDuvy-EeSWU-fNJiYtDg" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_yQoqsPy-EeSWU-fNJiYtDg" label="Open" iconURI="platform:/plugin/Nercurio/icons/sample.png" command="_yQoDsPy-EeSWU-fNJiYtDg"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_yQoqsfy-EeSWU-fNJiYtDg" label="Save" iconURI="platform:/plugin/Nercurio/icons/save_edit.png" command="_yQoDs_y-EeSWU-fNJiYtDg"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_yQoqsvy-EeSWU-fNJiYtDg" label="Quit" command="_yQoDrPy-EeSWU-fNJiYtDg"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_yQoqs_y-EeSWU-fNJiYtDg" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_yQoqtPy-EeSWU-fNJiYtDg" label="About" command="_yQoDtvy-EeSWU-fNJiYtDg"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_yQoquvy-EeSWU-fNJiYtDg">
+      <children xsi:type="menu:ToolBar" xmi:id="_yQoqu_y-EeSWU-fNJiYtDg" elementId="toolbar:org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_yQoqvPy-EeSWU-fNJiYtDg" iconURI="platform:/plugin/Nercurio/icons/sample.png" command="_yQoDsPy-EeSWU-fNJiYtDg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_yQoqvfy-EeSWU-fNJiYtDg" iconURI="platform:/plugin/Nercurio/icons/save_edit.png" command="_yQoDs_y-EeSWU-fNJiYtDg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_mO9UoPzWEeSWU-fNJiYtDg" elementId="nercurio.handledtoolitem.load" iconURI="platform:/plugin/Nercurio/icons/sample.png" command="_XqJAUPzWEeSWU-fNJiYtDg"/>
+      </children>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_yQoDrfy-EeSWU-fNJiYtDg" elementId="Nercurio.handler.quitCommand" contributionURI="bundleclass://Nercurio/Nercurio.handlers.QuitHandler" command="_yQoDrPy-EeSWU-fNJiYtDg"/>
+  <handlers xmi:id="_yQoDsfy-EeSWU-fNJiYtDg" elementId="Nercurio.handler.openCommand" contributionURI="bundleclass://Nercurio/Nercurio.handlers.OpenHandler" command="_yQoDsPy-EeSWU-fNJiYtDg"/>
+  <handlers xmi:id="_yQoDtPy-EeSWU-fNJiYtDg" elementId="Nercurio.handler.saveCommand" contributionURI="bundleclass://Nercurio/Nercurio.handlers.SaveHandler" command="_yQoDs_y-EeSWU-fNJiYtDg"/>
+  <handlers xmi:id="_yQoDt_y-EeSWU-fNJiYtDg" elementId="Nercurio.handler.aboutCommand" contributionURI="bundleclass://Nercurio/Nercurio.handlers.AboutHandler" command="_yQoDtvy-EeSWU-fNJiYtDg"/>
+  <handlers xmi:id="_c91HgPzWEeSWU-fNJiYtDg" elementId="nercurio.handler.loadCommand" contributionURI="bundleclass://Nercurio/Nercurio.handlers.LoadHandler" command="_XqJAUPzWEeSWU-fNJiYtDg"/>
+  <bindingTables xmi:id="_yQoDrvy-EeSWU-fNJiYtDg" bindingContext="_yQoDqfy-EeSWU-fNJiYtDg">
+    <bindings xmi:id="_yQoDr_y-EeSWU-fNJiYtDg" keySequence="M1+Q" command="_yQoDrPy-EeSWU-fNJiYtDg"/>
+    <bindings xmi:id="_yQoDsvy-EeSWU-fNJiYtDg" keySequence="M1+O" command="_yQoDsPy-EeSWU-fNJiYtDg"/>
+    <bindings xmi:id="_yQoDtfy-EeSWU-fNJiYtDg" keySequence="M1+S" command="_yQoDs_y-EeSWU-fNJiYtDg"/>
+    <bindings xmi:id="_yQoDuPy-EeSWU-fNJiYtDg" keySequence="M1+A" command="_yQoDtvy-EeSWU-fNJiYtDg"/>
+  </bindingTables>
+  <rootContext xmi:id="_yQoDqfy-EeSWU-fNJiYtDg" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_yQoDqvy-EeSWU-fNJiYtDg" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_yQoDq_y-EeSWU-fNJiYtDg" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_yQoDrPy-EeSWU-fNJiYtDg" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
+  <commands xmi:id="_yQoDsPy-EeSWU-fNJiYtDg" elementId="Nercurio.open" commandName="openCommand"/>
+  <commands xmi:id="_yQoDs_y-EeSWU-fNJiYtDg" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
+  <commands xmi:id="_yQoDtvy-EeSWU-fNJiYtDg" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <commands xmi:id="_XqJAUPzWEeSWU-fNJiYtDg" elementId="nercurio.command.load" commandName="loadCommand"/>
+  <addons xmi:id="_yQoDovy-EeSWU-fNJiYtDg" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_yQoDo_y-EeSWU-fNJiYtDg" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_yQoDpPy-EeSWU-fNJiYtDg" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_yQoDpfy-EeSWU-fNJiYtDg" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_yQoDpvy-EeSWU-fNJiYtDg" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_yQoDp_y-EeSWU-fNJiYtDg" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_yQoDqPy-EeSWU-fNJiYtDg" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>
