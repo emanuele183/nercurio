@@ -4,7 +4,7 @@
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_yQoqtfy-EeSWU-fNJiYtDg">
       <children xsi:type="advanced:Perspective" xmi:id="_yQoqtvy-EeSWU-fNJiYtDg">
         <children xsi:type="basic:PartSashContainer" xmi:id="_yQoqt_y-EeSWU-fNJiYtDg">
-          <children xsi:type="basic:Part" xmi:id="_yQoqufy-EeSWU-fNJiYtDg" elementId="nercurio.parts.mainPart" contributionURI="bundleclass://Nercurio/Nercurio.parts.SamplePart" label="Sample Part"/>
+          <children xsi:type="basic:Part" xmi:id="_yQoqufy-EeSWU-fNJiYtDg" elementId="com.eleomanni.nercurio.parts.mainPart" contributionURI="bundleclass://com.eleomanni.nercurio/com.eleomanni.nercurio.parts.SamplePart" label="Sample Part"/>
         </children>
       </children>
     </children>
@@ -18,14 +18,14 @@
     </mainMenu>
     <trimBars xmi:id="_yQoquvy-EeSWU-fNJiYtDg">
       <children xsi:type="menu:ToolBar" xmi:id="_yQoqu_y-EeSWU-fNJiYtDg" elementId="toolbar:org.eclipse.ui.main.toolbar">
-        <children xsi:type="menu:HandledToolItem" xmi:id="_mO9UoPzWEeSWU-fNJiYtDg" elementId="nercurio.handledtoolitem.load" iconURI="platform:/plugin/Nercurio/icons/sample.png" command="_XqJAUPzWEeSWU-fNJiYtDg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_mO9UoPzWEeSWU-fNJiYtDg" elementId="com.eleomani.nercurio.handledtoolitem.load" iconURI="platform:/plugin/com.eleomanni.nercurio/icons/sample.png" command="_XqJAUPzWEeSWU-fNJiYtDg"/>
       </children>
-      <children xsi:type="menu:ToolControl" xmi:id="_ZWEXAP0gEeSJp_VEndepGA" elementId="nercurio.toolcontrol.search" contributionURI="bundleclass://Nercurio/Nercurio.toolcontrols.SearchToolItem"/>
+      <children xsi:type="menu:ToolControl" xmi:id="_ZWEXAP0gEeSJp_VEndepGA" elementId="com.eleomanni.nercurio.toolcontrol.search" contributionURI="bundleclass://com.eleomanni.nercurio/com.eleomanni.nercurio.toolcontrols.SearchToolItem"/>
     </trimBars>
   </children>
-  <handlers xmi:id="_yQoDrfy-EeSWU-fNJiYtDg" elementId="Nercurio.handler.quitCommand" contributionURI="bundleclass://Nercurio/Nercurio.handlers.QuitHandler" command="_yQoDrPy-EeSWU-fNJiYtDg"/>
-  <handlers xmi:id="_yQoDt_y-EeSWU-fNJiYtDg" elementId="Nercurio.handler.aboutCommand" contributionURI="bundleclass://Nercurio/Nercurio.handlers.AboutHandler" command="_yQoDtvy-EeSWU-fNJiYtDg"/>
-  <handlers xmi:id="_c91HgPzWEeSWU-fNJiYtDg" elementId="nercurio.handler.loadCommand" contributionURI="bundleclass://Nercurio/Nercurio.handlers.LoadHandler" command="_XqJAUPzWEeSWU-fNJiYtDg"/>
+  <handlers xmi:id="_yQoDrfy-EeSWU-fNJiYtDg" elementId="com.eleomanni.nercurio.handler.quitCommand" contributionURI="bundleclass://com.eleomanni.nercurio/com.eleomanni.nercurio.handlers.QuitHandler" command="_yQoDrPy-EeSWU-fNJiYtDg"/>
+  <handlers xmi:id="_yQoDt_y-EeSWU-fNJiYtDg" elementId="com.eleomanni.nercurio.handler.aboutCommand" contributionURI="bundleclass://com.eleomanni.nercurio/com.eleomanni.nercurio.handlers.AboutHandler" command="_yQoDtvy-EeSWU-fNJiYtDg"/>
+  <handlers xmi:id="_c91HgPzWEeSWU-fNJiYtDg" elementId="com.eleomanni.nercurio.handler.loadCommand" contributionURI="bundleclass://com.eleomanni.nercurio/com.eleomanni.nercurio.handlers.LoadHandler" command="_XqJAUPzWEeSWU-fNJiYtDg"/>
   <bindingTables xmi:id="_yQoDrvy-EeSWU-fNJiYtDg" bindingContext="_yQoDqfy-EeSWU-fNJiYtDg">
     <bindings xmi:id="_yQoDr_y-EeSWU-fNJiYtDg" keySequence="M1+L" command="_XqJAUPzWEeSWU-fNJiYtDg"/>
     <bindings xmi:id="_yQoDuPy-EeSWU-fNJiYtDg" keySequence="M1+A" command="_yQoDtvy-EeSWU-fNJiYtDg"/>
@@ -36,7 +36,7 @@
   </rootContext>
   <commands xmi:id="_yQoDrPy-EeSWU-fNJiYtDg" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
   <commands xmi:id="_yQoDtvy-EeSWU-fNJiYtDg" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
-  <commands xmi:id="_XqJAUPzWEeSWU-fNJiYtDg" elementId="nercurio.command.load" commandName="loadCommand"/>
+  <commands xmi:id="_XqJAUPzWEeSWU-fNJiYtDg" elementId="com.eleomanni.nercurio.command.load" commandName="loadCommand"/>
   <addons xmi:id="_yQoDovy-EeSWU-fNJiYtDg" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_yQoDo_y-EeSWU-fNJiYtDg" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_yQoDpPy-EeSWU-fNJiYtDg" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>

@@ -9,10 +9,12 @@
  *     IBM Corporation - initial API and implementation
  *     Lars Vogel <lars.Vogel@gmail.com> - Bug 419770
  *******************************************************************************/
-package Nercurio.parts;
+package com.eleomanni.nercurio.parts;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
+import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.layout.GridData;
@@ -22,6 +24,7 @@ import org.eclipse.swt.widgets.Composite;
 public class SamplePart {
 
 	private TableViewer tableViewer;
+	@Inject private Logger log;
 
 	@PostConstruct
 	public void createComposite(Composite parent) {
@@ -35,8 +38,13 @@ public class SamplePart {
 		tableViewer.add("Sample item 4");
 		tableViewer.add("Sample item 5");
 		tableViewer.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
+		
+		log.error("ERRORE");
+		log.debug("DEBUG");
+		log.info("INFO");
 	}
 
+	
 	@Focus
 	public void setFocus() {
 		tableViewer.getTable().setFocus();

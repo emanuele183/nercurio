@@ -9,7 +9,7 @@
             application="org.eclipse.e4.ui.workbench.swt.E4Application">
          <property
                name="applicationCSS"
-               value="platform:/plugin/Nercurio/css/default.css">
+               value="platform:/plugin/com.eleomanni.nercurio/css/default.css">
          </property>
          <property
                name="appName"

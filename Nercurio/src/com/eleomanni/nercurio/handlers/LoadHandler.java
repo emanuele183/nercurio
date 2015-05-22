@@ -9,7 +9,7 @@
  *     IBM Corporation - initial API and implementation
  *     Lars Vogel <lars.Vogel@gmail.com> - Bug 419770
  *******************************************************************************/
-package Nercurio.handlers;
+package com.eleomanni.nercurio.handlers;
 
 import javax.inject.Inject;
 
