@@ -26,7 +26,7 @@ public class LoadHandler {
 	
 	@Execute
 	public void execute(Shell shell){
-		MPart mainPart = partService.findPart("nercurio.parts.mainPart");
+		MPart mainPart = partService.findPart("com.eleomanni.nercurio.parts.mainPart");
 		if (mainPart != null){
 			if (toggleMainPart){
 				partService.hidePart(mainPart);
