@@ -15,6 +15,10 @@
                name="appName"
                value="Nercurio">
          </property>
+         <property
+           name="lifeCycleURI"
+           value="bundleclass://com.eleomanni.nercurio/com.eleomanni.nercurio.utils.NercurioLifeCycleManager">
+         </property>
       </product>
    </extension>
 

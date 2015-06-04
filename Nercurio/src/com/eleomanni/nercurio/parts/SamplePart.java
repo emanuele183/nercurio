@@ -39,9 +39,6 @@ public class SamplePart {
 		tableViewer.add("Sample item 5");
 		tableViewer.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
 		
-		log.error("ERRORE");
-		log.debug("DEBUG");
-		log.info("INFO");
 	}
 
 	
