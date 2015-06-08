@@ -13,11 +13,8 @@ import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.e4.ui.workbench.lifecycle.PostContextCreate;
 import org.eclipse.equinox.app.IApplicationContext;
-import org.hibernate.Session;
 import org.osgi.service.prefs.BackingStoreException;
 import org.osgi.service.prefs.Preferences;
-
-import com.eleomanni.nercurio.entities.Person;
 
 // for a extended example see
 // https://bugs.eclipse.org/382224
@@ -32,36 +29,26 @@ public class NercurioLifeCycleManager {
 				.getNode(Constants.Configurations.PREFERENCES_CONFIGURATION_ID);
 		Preferences pref = preferences.node(Constants.Configurations.PREFERENCES_CONFIGURATION_NODE);
 		String test1 = pref.get(Constants.Preferences.APP_NAME, Constants.Preferences.TEST_VALUE);
-		log.info("test1= " + test1);
+		//init preferences
 		if (!test1.equalsIgnoreCase(Constants.Preferences.Default.APP_VALUE)){
-			log.info("Init Preferences");
+			log.debug("Init Preferences");
 			initDefaultPreferences(pref);
-			File theDir = new File(pref.get(Constants.Preferences.HOMEDIR_NAME, Constants.Preferences.Default.HOMEDIR_VALUE));
-			if (!theDir.exists()){
-				log.debug("HOME Directory not found");
-				log.debug("Create HOME Directory");
-				if(!theDir.mkdir()){
-					//FIXME manage error
-					log.error("Impossible to create the properties directory");
-					System.exit(0);
-				}
-			}else{
-				log.debug("HOME Directory already existent");
-			}
-			
-			log.debug("Create DB file");
-			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-	        session.beginTransaction();
-
-	        Person p = new Person();
-	        p.setName("NameTest");
-	        p.setSurname("SurnameTest");
-	        session.save(p);
-	        session.getTransaction().commit();
-//			initDB(pref);
 		}
-		String test2 = pref.get(Constants.Preferences.APP_NAME, Constants.Preferences.TEST_VALUE);
-		log.info("test2= " + test2);
+		//init home folder
+		File theDir = new File(pref.get(Constants.Preferences.HOMEDIR_NAME, Constants.Preferences.Default.HOMEDIR_VALUE));
+		if (!theDir.exists()){
+			log.debug("HOME Directory not found");
+			log.debug("Create HOME Directory");
+			if(!theDir.mkdir()){
+				//FIXME manage error
+				log.error("Impossible to create the properties directory");
+				System.exit(0);
+			}
+		}
+		
+		//init DB
+		log.debug("Init DB");
+		initDB(pref);
 	}
 
 	void initDefaultPreferences(Preferences pref) {
@@ -80,16 +67,17 @@ public class NercurioLifeCycleManager {
 	}
 
 	private void initDB(Preferences pref){
+		
 		//TODO if DB file exists create backup and archive
 		// create a connection source to the database
 		// load the sqlite-JDBC driver using the current class loader
-
 		Connection connection = null;
 		try
 		{
 			Class.forName(pref.get(Constants.Preferences.DB_SQLITE_CLASS_NAME, Constants.Preferences.Default.DB_SQLITE_CLASS_VALUE));
 			// create a database connection
-			connection = DriverManager.getConnection(pref.get(Constants.Preferences.DB_SQLITE_URL_NAME, Constants.Preferences.Default.DB_SQLITE_URL_VALUE));
+			String dbUrl = pref.get(Constants.Preferences.DB_SQLITE_URL_NAME, Constants.Preferences.Default.DB_SQLITE_URL_VALUE);
+			connection = DriverManager.getConnection(dbUrl);
 			Statement statement = connection.createStatement();
 			statement.setQueryTimeout(30);  // set timeout to 30 sec.
 			statement.executeUpdate(Constants.SQL.CREATE_TABLE_PERSON);

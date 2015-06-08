@@ -7,7 +7,7 @@ public final class Constants {
 	public static final class SQL{
 		public static final String TABLE_PERSON = "person"; 
 		
-		public static final String CREATE_TABLE_PERSON = "create table " 
+		public static final String CREATE_TABLE_PERSON = "create table if not exists " 
 														 + Constants.SQL.TABLE_PERSON 
 														 + " (ID integer, "
 														 +"NAME string, "
@@ -24,7 +24,7 @@ public final class Constants {
 														 +"DAT_SUBSCRIPTION date, "
 														 +"DAT_INS date, "
 														 +"DAT_LAST_MOD date, "
-														 +"DAT_DEL date, "
+														 +"DAT_DEL date"
 														 + ")";
 	}
 	
