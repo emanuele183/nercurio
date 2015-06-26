@@ -1,14 +1,9 @@
 package com.eleomanni.nercurio.utils;
 
 import java.io.File;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 import javax.inject.Inject;
 
-import org.eclipse.core.runtime.preferences.ConfigurationScope;
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.e4.ui.workbench.lifecycle.PostContextCreate;
@@ -25,9 +20,7 @@ public class NercurioLifeCycleManager {
 	@PostContextCreate
 	void postContextCreate(final IEventBroker eventBroker, IApplicationContext context) {
 		// read values from the instance scope
-		Preferences preferences = ConfigurationScope.INSTANCE
-				.getNode(Constants.Configurations.PREFERENCES_CONFIGURATION_ID);
-		Preferences pref = preferences.node(Constants.Configurations.PREFERENCES_CONFIGURATION_NODE);
+		Preferences pref = Utils.getPreferences();
 		String test1 = pref.get(Constants.Preferences.APP_NAME, Constants.Preferences.TEST_VALUE);
 		//init preferences
 		if (!test1.equalsIgnoreCase(Constants.Preferences.Default.APP_VALUE)){
@@ -48,7 +41,13 @@ public class NercurioLifeCycleManager {
 		
 		//init DB
 		log.debug("Init DB");
-		initDB(pref);
+		SqliteDBUtils db = new SqliteDBUtils();
+		try {
+			db.initDB();
+		} catch (NercurioException e) {
+			//FIXME aprire finestra d'errore
+			log.error(e.toString());
+		}
 	}
 
 	void initDefaultPreferences(Preferences pref) {
@@ -63,44 +62,6 @@ public class NercurioLifeCycleManager {
 		} catch (BackingStoreException e) {
 			//FIXME correggere gestione errore
 			e.printStackTrace();
-		}
-	}
-
-	private void initDB(Preferences pref){
-		
-		//TODO if DB file exists create backup and archive
-		// create a connection source to the database
-		// load the sqlite-JDBC driver using the current class loader
-		Connection connection = null;
-		try
-		{
-			Class.forName(pref.get(Constants.Preferences.DB_SQLITE_CLASS_NAME, Constants.Preferences.Default.DB_SQLITE_CLASS_VALUE));
-			// create a database connection
-			String dbUrl = pref.get(Constants.Preferences.DB_SQLITE_URL_NAME, Constants.Preferences.Default.DB_SQLITE_URL_VALUE);
-			connection = DriverManager.getConnection(dbUrl);
-			Statement statement = connection.createStatement();
-			statement.setQueryTimeout(30);  // set timeout to 30 sec.
-			statement.executeUpdate(Constants.SQL.CREATE_TABLE_PERSON);
-			statement.close();
-			//TODO create the 'medicine' table structure
-		}
-		catch(SQLException | ClassNotFoundException e)
-		{
-			//FIXME correggere gestione errore
-			e.printStackTrace();
-		}
-		finally
-		{
-			try
-			{
-				if(connection != null)
-					connection.close();
-			}
-			catch(SQLException e)
-			{
-				//FIXME correggere gestione errore
-				e.printStackTrace();
-			}
 		}
 	}
 } 
